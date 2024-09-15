@@ -9,7 +9,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
+# os.environ['OPENAI_API_KEY']=os.getenv("OPENAI_API_KEY")
+
 
 app=FastAPI(
     title="Langchain Server",
@@ -18,25 +19,25 @@ app=FastAPI(
 
 )
 
-add_routes(
-    app,
-    ChatOpenAI(),
-    path="/openai"
-)
-model=ChatOpenAI()
+# add_routes(
+#     app,
+#     ChatOpenAI(),
+#     path="/openai"
+# )
+# model=ChatOpenAI()
 ##ollama llama2
 llm=Ollama(model="llama2")
 
-prompt1=ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
+# prompt1=ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
 prompt2=ChatPromptTemplate.from_template("Write me an poem about {topic} for a 5 years child with 100 words")
 
-add_routes(
-    app,
-    prompt1|model,
-    path="/essay"
-
-
-)
+# add_routes(
+#     app,
+#     prompt1|model,
+#     path="/essay"
+#
+#
+# )
 
 add_routes(
     app,

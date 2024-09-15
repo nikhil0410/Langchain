@@ -17,11 +17,11 @@ def get_ollama_response(input_text):
     ## streamlit framework
 
 st.title('Langchain Demo With LLAMA2 API')
-input_text=st.text_input("Write an essay on")
+# input_text=st.text_input("Write an essay on")
 input_text1=st.text_input("Write a poem on")
 
-if input_text:
-    st.write(get_openai_response(input_text))
+# if input_text:
+#     st.write(get_openai_response(input_text))
 
 if input_text1:
     st.write(get_ollama_response(input_text1))
